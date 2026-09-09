@@ -1,0 +1,169 @@
+
+* {
+    box-sizing: border-box;
+}
+
+*
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #0A1124;
+    color: #92B99C;
+
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("seamlessgalaxysmooth.jpg");
+    background-repeat: repeat;
+    background-size: auto;
+
+    animation: movimento 60s linear infinite;
+
+    opacity: 0.35;
+
+    z-index: -2;
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-color: rgba(10, 17, 36, 0.65);
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+@keyframes movimento {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 1000px 500px;
+    }
+}
+
+
+h1 {
+    margin: 0 0 40px 0;
+
+    color: #92B99C;
+
+    font-family: "Ranade", monospace;
+    font-size: 65px;
+
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+/* ================================= */
+/* ÁREA DOS CRÉDITOS */
+/* ================================= */
+
+.lel {
+    width: 600px;
+    max-width: 90vw;
+
+    min-height: 260px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 45px;
+
+    background-color: rgba(10, 17, 36, 0.92);
+
+    border: 2px solid #92B99C;
+
+    box-shadow:
+        0 0 30px rgba(146, 185, 156, 0.12);
+}
+
+/* ================================= */
+/* TEXTO */
+/* ================================= */
+
+.lel p {
+    margin: 0;
+
+    color: #92B99C;
+
+    font-family: "Ranade", monospace;
+    font-size: 19px;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+button {
+    width: 300px;
+    height: 60px;
+
+    margin-top: 45px;
+
+    border: none;
+
+    background-color: #92B99C;
+    color: #22262c;
+
+    font-family: "Ranade", monospace;
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(169, 207, 191);
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(146, 185, 156, 0.2);
+}
+
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .lel {
+        padding: 30px 20px;
+    }
+
+    .lel p {
+        font-size: 16px;
+    }
+
+    button {
+        width: 250px;
+    }
+}

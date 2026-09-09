@@ -1,0 +1,276 @@
+  * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    background-color: #0A1124;
+    color: #92B99C;
+    overflow-x: hidden;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("background1.webp");
+    background-repeat: repeat;
+    background-size: 900px auto;
+    background-position: 0 0;
+
+    animation: movimento 90s linear infinite;
+
+    opacity: 0.35;
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: rgba(10, 17, 36, 0.72);
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes movimento {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 500px 250px;
+    }
+}
+
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+
+    background: rgba(10, 17, 36, 0.94);
+
+    border: 2px solid #92B99C;
+    padding: 45px;
+
+    box-shadow:
+        0 0 30px rgba(146, 185, 156, 0.12);
+}
+
+
+h1 {
+    margin: 0 0 10px 0;
+
+    text-align: center;
+
+    color: #92B99C;
+
+    font-family: "Ranade", monospace;
+    font-size: 55px;
+    letter-spacing: 3px;
+}
+
+h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    color: #92B99C;
+
+    font-family: "Ranade", monospace;
+    font-size: 28px;
+
+    border-left: 5px solid red;
+    padding-left: 15px;
+}
+
+p {
+    color: #92B99C;
+
+    font-family: "Ranade", monospace;
+    font-size: 18px;
+
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.heuristicas {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.heuristica {
+    padding: 22px 25px;
+
+    background: rgba(53, 67, 65, 0.55);
+
+    border-left: 5px solid green;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.heuristica:hover {
+    transform: translateX(8px);
+
+    background-color: rgba(53, 67, 65, 0.85);
+
+    border-left-color: #92B99C;
+}
+
+.heuristica h3 {
+    margin: 0 0 10px 0;
+
+    color: #92B99C;
+
+    font-family: "Ranade", monospace;
+    font-size: 21px;
+}
+
+.heuristica p {
+    margin: 0;
+
+    font-size: 16px;
+}
+
+
+
+.numero {
+    display: inline-block;
+
+    margin-right: 10px;
+
+    color: green;
+
+    font-family: "Ranade", monospace;
+    font-weight: bold;
+}
+
+
+.destaque {
+    margin: 35px 0;
+    padding: 25px;
+
+    background-color: rgba(0, 128, 0, 0.12);
+
+    border: 1px solid green;
+
+    color: #92B99C;
+
+    font-family: "Ranade", monospace;
+    text-align: center;
+}
+
+.imagelink {
+    display: table;
+    margin: 30px auto;
+}
+
+.image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    border: 2px solid #92B99C;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.02);
+
+    box-shadow:
+        0 0 20px rgba(146, 185, 156, 0.25);
+}
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    a {
+    color: green;
+    text-decoration: underline;
+    font-family: "Ranade", monospace;
+}
+
+a:hover {
+    color: #92B99C;
+}
+
+    p {
+        font-size: 16px;
+    }
+
+}
+  button {
+    display: block;
+    width: 350px;
+    height: 60px;
+
+    margin: 50px auto 20px auto;
+
+    background-color: #92B99C;
+    color: #22262c;
+
+    border: none;
+
+    font-family: "Ranade", monospace;
+    font-size: 25px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(169, 207, 191);
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 5px 15px rgba(146, 185, 156, 0.2);
+}
+.jakob {
+    color: #00ff55 !important;
+    text-decoration: underline;
+}
+
+.jakob:visited {
+    color: #00ff55 !important;
+}
+
+.jakob:hover {
+    color: #92B99C !important;
+    text-shadow: 0 0 8px #92B99C;
+}

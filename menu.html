@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.D.H.W.U.</title>
+
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+
+    <!-- FUNDOS -->
+    <div id="fundo1"></div>
+    <div id="fundo2"></div>
+
+
+    <main class="menu">
+
+        <h1>Bem-vindos!</h1>
+
+
+        <!-- BOTÕES -->
+        <div class="botoes" onmouseleave="limparConteudo()">
+
+            <a href="atv1.html"
+               class="botao ihc"
+               onmouseenter="mostrarConteudo(1)">
+                IHC
+            </a>
+
+            <a href="design.html"
+               class="botao design"
+               onmouseenter="mostrarConteudo(2)">
+                DESIGN THINKING
+            </a>
+
+            <a href="heuristica.html"
+               class="botao heuristicas"
+               onmouseenter="mostrarConteudo(3)">
+                HEURÍSTICAS
+            </a>
+
+            <a href="wcag.html"
+               class="botao wcag"
+               onmouseenter="mostrarConteudo(4)">
+                WCAG
+            </a>
+
+            <a href="uxui.html"
+               class="botao uxui"
+               onmouseenter="mostrarConteudo(5)">
+                UX/UI
+            </a>
+
+        </div>
+
+
+        <!-- PAINEL CENTRAL -->
+        <div class="painel">
+
+            <h2 id="titulo"></h2>
+
+            <p id="descricao"></p>
+
+        </div>
+
+
+        
+        <div class="inferior">
+
+            <a href="index.html">
+                VOLTAR
+            </a>
+
+            <a href="creditos.html">
+                CRÉDITOS
+            </a>
+
+        </div>
+
+    </main>
+
+
+<script>
+
+const fundos = [
+    document.getElementById("fundo1"),
+    document.getElementById("fundo2")
+];
+
+let fundoAtual = 0;
+
+
+// IMAGENS
+
+const imagens = [
+    "background1.webp",
+    "background2.avif",
+    "background3.avif",
+    "background4.webp",
+    "background5.jpg"
+];
+
+
+// PRÉ-CARREGA AS IMAGENS
+
+imagens.forEach(function(src) {
+
+    const img = new Image();
+
+    img.src = src;
+
+});
+
+
+// CONTEÚDO DOS BOTÕES
+
+const dados = {
+
+    1: {
+        imagem: "background1.webp",
+        titulo: "IHC",
+        descricao: "Interação Humano-Computador: estudo da interação entre pessoas e sistemas."
+    },
+
+    2: {
+        imagem: "background2.avif",
+        titulo: "DESIGN THINKING",
+        descricao: "Uma abordagem para compreender problemas e desenvolver soluções centradas nas pessoas."
+    },
+
+    3: {
+        imagem: "background3.avif",
+        titulo: "HEURÍSTICAS DE NIELSEN",
+        descricao: "Princípios utilizados para avaliar a usabilidade de uma interface."
+    },
+
+    4: {
+        imagem: "background4.webp",
+        titulo: "WCAG",
+        descricao: "Diretrizes para tornar conteúdos e interfaces da Web mais acessíveis."
+    },
+
+    5: {
+        imagem: "background5.jpg",
+        titulo: "UX/UI",
+        descricao: "Conceitos relacionados à experiência do usuário e ao design das interfaces."
+    }
+
+};
+
+
+
+
+function mostrarConteudo(opcao) {
+
+    const item = dados[opcao];
+
+    document.getElementById("titulo").textContent = item.titulo;
+
+    document.getElementById("descricao").textContent = item.descricao;
+
+
+
+    const proximo = fundos[1 - fundoAtual];
+    const atual = fundos[fundoAtual];
+
+
+    
+
+    proximo.style.backgroundImage = `url("${item.imagem}")`;
+
+
+
+    proximo.style.opacity = "1";
+
+
+  
+
+    atual.style.opacity = "0";
+
+
+
+    fundoAtual = 1 - fundoAtual;
+
+}
+
+
+// QUANDO SAI DOS BOTÕES
+
+function limparConteudo() {
+
+    fundos[0].style.opacity = "0";
+    fundos[1].style.opacity = "0";
+
+    document.getElementById("titulo").textContent = "";
+    document.getElementById("descricao").textContent = "";
+
+}
+
+</script>
+
+</body>
+</html>
